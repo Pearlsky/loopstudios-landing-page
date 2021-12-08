@@ -1,0 +1,486 @@
+/* Writing this CSS with OOCSS Methodology for only when i'm optimizing for lesser lines of code)*/
+
+/* Custom Variables & */
+
+:root {
+  box-sizing: border-box;
+  font-size: 1em;
+  --alata: "Alata", sans-serif;
+  --josefin: "Josefin Sans", sans-serif;
+  --disabled: hsl(0, 0%, 41%);
+  --dark-gray: hsl(0, 0%, 55%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body * + * {
+  margin-top: 1.5em;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.nav,
+.h1,
+.h1-span,
+.h1-wrap,
+.h1-break2,
+.intro-beta,
+.intro-img {
+  margin-top: 0;
+}
+
+/* Fonts & Colors */
+
+body {
+  font-family: var(--alata);
+  font-size: 0.9rem;
+}
+
+.h1,
+.h2,
+.h3 {
+  font-family: var(--josefin);
+  font-weight: 300;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+
+.white {
+  color: var(--white);
+}
+
+/* Containers & Content */
+
+.header {
+  background-color: palevioletred;
+  background-image: url(../images/mobile/image-hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 3em;
+}
+
+.header-grid {
+  display: grid;
+  grid-template-rows: 10rem 27rem;
+}
+
+.navbar {
+  align-self: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  display: none;
+  list-style-type: none;
+}
+
+.nav-item + * {
+  margin-top: 0;
+}
+
+.main {
+  margin: 7em auto 0;
+}
+
+.feature-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-tile {
+  border: none;
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cta-wrap {
+  display: flex;
+  order: 1;
+  justify-content: center;
+}
+
+.cta {
+  background-color: var(--white);
+  border: solid 2px var(--dark-gray);
+  font-family: var(--alata);
+  font-weight: bold;
+  letter-spacing: .3em;
+  padding: 0.9em 0.8em;
+  text-align: center;
+  text-transform: uppercase;
+  width: 12em;
+}
+
+.footer {
+  background-color: var(--black);
+  padding: 3em 0;
+  text-align: center;
+  margin-top: 7em;
+}
+
+.footer-nav {
+  list-style-type: none;
+  display: contents;
+}
+
+.footer-contact {
+  width: 50%;
+  margin: auto;
+  padding-top: 1.5em;
+}
+
+.footer-contact > a + * {
+  margin-top: 0;
+  margin-left: 0.5em;
+}
+
+.about {
+  margin-top: 1.5em;
+}
+
+/* Structure & Skin */
+
+.a:link {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.a:visited {
+  color: var(--white);
+}
+
+.h1 {
+  border: 2px solid var(--white);
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  padding: 0.7em;
+}
+
+.h1-span {
+  display: block;
+}
+
+.h2 {
+  font-size: 2.25rem;
+  margin: 1.5em auto 0;
+}
+
+.h3 {
+  font-size: 1.3rem;
+  margin-top: 2.5em;
+  padding-left: 1em;
+}
+
+.intro-img {
+  max-width: 100%;
+}
+
+.intro-beta {
+  text-align: center;
+}
+
+.intro-text {
+  color: var(--dark-gray);
+  padding: 0 2em;
+  line-height: 1.7;
+}
+
+.copyright {
+  display: block;
+  color: var(--disabled);
+  margin-top: 1.5em;
+}
+
+.tile-1 {
+  background-image: url(../images/mobile/image-deep-earth.jpg);
+}
+.tile-2 {
+  background-image: url(../images/mobile/image-night-arcade.jpg);
+}
+.tile-3 {
+  background-image: url(../images/mobile/image-soccer-team.jpg);
+}
+.tile-4 {
+  background-image: url(../images/mobile/image-grid.jpg);
+}
+.tile-5 {
+  background-image: url(../images/mobile/image-from-above.jpg);
+}
+.tile-6 {
+  background-image: url(../images/mobile/image-pocket-borealis.jpg);
+}
+.tile-7 {
+  background-image: url(../images/mobile/image-curiosity.jpg);
+}
+.tile-8 {
+  background-image: url(../images/mobile/image-fisheye.jpg);
+}
+
+
+/* Media Queries */
+
+@media (max-width: 370px) {
+  :root {
+    font-size: 0.9em;
+  }
+}
+
+@media (min-width: 490px) {
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+    grid-template-rows: 6em;
+    grid-auto-rows: 22.5em;
+    grid-gap: 1.5em 1.5em;
+  }
+
+  .feature-tile {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+
+  .feature-title {
+    margin: 0;
+    grid-column: 1/-2;
+  }
+
+  .cta {
+    align-self: flex-start;
+    margin: 0;
+    width: 11em;
+  }
+
+  .cta-wrap {
+    grid-column-end: -1;
+    justify-content: end;
+    margin-top: 0;
+    order: 0;
+  }
+}
+
+@media (min-width: 720px) {
+
+  .h1 {
+    font-size: 3rem;
+  }
+    
+  .h2 {
+    font-size: 2.5rem;
+  }
+
+
+  /* Container & Content */
+
+  .header {
+    background-image: url(../images/desktop/image-hero.jpg);
+    padding: 4em 0 2.5em;
+  }
+
+  .header-grid {
+    grid-template-rows: 10rem 25rem;
+
+  }
+
+  .h1-span {
+    display: inline;
+  }
+
+  .nav {
+    flex: 0 0 50%;
+  }
+
+  .nav-list {
+    display: flex;
+    padding-left: 0;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .intro-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr 2fr);
+    grid-template-rows: repeat(3, 10.4rem);
+    margin-bottom: 9em;;
+  }
+
+  .intro-alpha {
+    grid-column: span 3 / 4;
+    grid-row: 1 / 4;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .intro-beta {
+    background-color: var(--white);
+    grid-column: 3 / 5;
+    grid-row: 2 / 4;
+    padding: 22.5% 0 0 22.5%;
+    text-align: left;
+  }
+
+  .intro-img {
+    width: 100%;
+  }
+
+  .intro-title {
+    margin-top: 0;
+  }
+
+  .intro-text {
+    margin-top: 2rem;
+    padding: 0;
+  }
+
+  .picture {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .footer-nav {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+  }
+
+  .footer-nav > li {
+    margin: 0;
+  }
+
+  .footer-nav > li + * {
+    margin-top: 0;
+  }
+
+  .footer-contact {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+  }
+
+  .fwrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .fwrap-a,
+  .fwrap-b {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fwrap-a {
+    flex: 0 0 40%;
+  }
+
+  .fwrap-b {
+    align-items: flex-end;
+    margin-top: 0;
+  }
+
+  .about {
+    margin-top: 0;
+  }
+
+
+  .tile-1 {
+    background-image: url(../images/desktop/image-deep-earth.jpg);
+  }
+  .tile-2 {
+    background-image: url(../images/desktop/image-night-arcade.jpg);
+  }
+  .tile-3 {
+    background-image: url(../images/desktop/image-soccer-team.jpg);
+  }
+  .tile-4 {
+    background-image: url(../images/desktop/image-grid.jpg);
+  }
+  .tile-5 {
+    background-image: url(../images/desktop/image-from-above.jpg);
+  }
+  .tile-6 {
+    background-image: url(../images/desktop/image-pocket-borealis.jpg);
+  }
+  .tile-7 {
+    background-image: url(../images/desktop/image-curiosity.jpg);
+  }
+  .tile-8 {
+    background-image: url(../images/desktop/image-fisheye.jpg);
+  }
+  
+  
+}
+
+@media (min-width: 895px) {
+
+  :root {
+    font-size: 1.2em;
+  }
+
+  body {
+    font-size: 0.8rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(auto-fit, minmax(22.5%, 1fr));
+    grid-auto-rows: 27.5em;
+    grid-gap: 2em;
+  }
+
+  .header-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .navbar {
+    grid-column: 1 /-1;
+  }
+
+  .h1-wrap {
+    grid-column: span 2 ;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    font-size: 1.4em;
+  }
+
+  .container {
+    max-width: 1440px;
+  }
+
+  .feature-grid {
+    grid-auto-rows: 31em;
+  }
+
+  .fwrap-a,
+  .nav {
+    flex: 0 0 35%;
+  }
+}
+
+/* make corrections whenever motivated */
