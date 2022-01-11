@@ -106,7 +106,7 @@ body {
 
 .feature-tile {
   border: none;
-  background-color: #000;
+  background-color: hsla(0, 0%, 100%, 0.6);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -232,6 +232,21 @@ body {
 }
 .tile-8 {
   background-image: url(../images/mobile/image-fisheye.jpg);
+}
+
+
+/* Hover States */
+
+.cta:hover {
+  background-color: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+
+.feature-tile:hover {
+  color: hsl(0, 0%, 0%);
+  cursor: pointer;
+  background-blend-mode: lighten
 }
 
 
